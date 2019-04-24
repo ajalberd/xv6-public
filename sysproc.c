@@ -28,13 +28,13 @@ sys_crsp(void) //prints out the current running and sleeping processes
     acquire(&ptable.lock); //get the lock
     for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
       if(p->state == RUNNABLE){
-        cprintf("process [%s:%d] is RUNNING\n", p->name, p->pid);
+        cprintf("%s \t %d  \t  RUNNING\n", p->name, p->pid);
       }
       else if(p->state == RUNNING){
-        cprintf("process [%s:%d] is RUNNING\n", p->name, p->pid);
+        cprintf("%s \t %d  \t  RUNNING\n", p->name, p->pid);
       }
       else if( p->state == SLEEPING){
-        cprintf("process [%s:%d] is SLEEPING\n", p->name, p->pid);
+        cprintf("%s \t %d  \t  SLEEPING\n", p->name, p->pid);
       }
       /*c->proc = p;
       switchuvm(p);
